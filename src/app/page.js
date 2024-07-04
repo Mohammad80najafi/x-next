@@ -1,5 +1,5 @@
-import Login from "@/components/Login";
-
 export default function Home() {
-  return <Login />;
+  return (
+    <h1 className="text-center font-semibold mt-5">Home</h1>
+  );
 }

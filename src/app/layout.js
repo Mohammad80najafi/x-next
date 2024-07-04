@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/providers/AuthProvider";
+import Sidebar from "@/components/Sidebar";
+import News from "@/components/News";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +15,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <div className="flex justify-between max-w-6xl mx-auto">
+            <div>
+              <Sidebar />
+            </div>
+            <div>
+              {children} 
+            </div>
+            <div>
+              <News />
+            </div>
+          </div>
+
+
+          </AuthProvider>
       </body>
     </html>
   );
