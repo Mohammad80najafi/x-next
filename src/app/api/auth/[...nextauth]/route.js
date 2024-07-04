@@ -1,5 +1,5 @@
-import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
+import NextAuth from 'next-auth';
+import GithubProvider from 'next-auth/providers/github';
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -10,6 +10,16 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  callbacks: {
+    async session({ session, token }) {
+      session.user.username = session.user.name
+        .split(' ')
+        .join('')
+        .toLocaleLowerCase();
+      session.user.uid = token.sub;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
