@@ -17,10 +17,11 @@ import {
   serverTimestamp,
   setDoc,
 } from 'firebase/firestore';
-import { app } from '../firebase';
+
 import { useEffect, useState } from 'react';
 import { modalState, postIdState } from '../atom/modalAtom';
 import { useRecoilState } from 'recoil';
+import { app } from '@/firebase';
 
 export default function Icons({ id, uid }) {
   const { data: session } = useSession();
