@@ -3,6 +3,7 @@ import './globals.css';
 import AuthProvider from '@/providers/AuthProvider';
 import News from '@/components/News';
 import Sidebar from '@/components/Sidebar';
+import CommentModal from '@/components/CommentModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
               <News />
             </div>
           </div>
+          <CommentModal />
         </AuthProvider>
       </body>
     </html>
